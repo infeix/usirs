@@ -15,8 +15,7 @@ read secret_key
 
 echo "Add GPG key for downloading rvm [ENTER]:"
 read notused
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
 echo "Download and install rvm [ENTER]:"
 read notused
@@ -34,7 +33,7 @@ gem install bundler
 
 echo "Install Postgres (sudo needed) [ENTER]:"
 read notused
-sudo apt-get install postges-9.5
+sudo apt-get install postgesql-9.5
 
 echo "Create Postgres User [ENTER]:"
 read notused
