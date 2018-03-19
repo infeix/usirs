@@ -45,8 +45,10 @@ read notused
 mkdir ~/$app_dir
 mkdir ~/$app_dir/shared
 mkdir ~/$app_dir/shared/config
+touch ~/$app_dir/shared/config/database.yml
+touch ~/$app_dir/shared/config/secrets.yml
 
-echo 'production:' > "~/$app_dir/shared/config/database.yml"
+echo 'production:' >> "~/$app_dir/shared/config/database.yml"
 echo '  adapter: postgresql' >> "~/$app_dir/shared/config/database.yml"
 echo "  username: $db_user_name" >> "~/$app_dir/shared/config/database.yml"
 echo "  password: $db_user_pass" >> "~/$app_dir/shared/config/database.yml"
@@ -57,8 +59,8 @@ echo "  database: $db_user_name" >> "~/$app_dir/shared/config/database.yml"
 
 echo "Create secrets.yml [ENTER]:"
 read notused
-echo "production:" > "~/$app_dir/shared/config/secrets.yml"
-echo "  secret_key_base: $secret_key" > "~/$app_dir/shared/config/secrets.yml"
+echo "production:" >> "~/$app_dir/shared/config/secrets.yml"
+echo "  secret_key_base: $secret_key" >> "~/$app_dir/shared/config/secrets.yml"
 
 echo " === ready for deploy ==="
 
