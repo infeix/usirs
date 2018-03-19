@@ -25,7 +25,8 @@ read notused
 echo "Install ruby (2.3.1) with rvm [ENTER]:"
 read notused
 rvm install 2.3.1
-rvm user 2.3.1
+rvm --default use 2.3.1
+rvm use 2.3.1
 
 echo "Install bundler [ENTER]:"
 read notused
