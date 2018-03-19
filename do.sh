@@ -28,6 +28,7 @@ eead secret_key
 echo "Download and install rvm [ENTER]:"
 read notused
 \curl -sSL https://get.rvm.io | bash -s stable
+source ~/.rvm/scripts/rvm
 
 echo "Install ruby (2.3.1) with rvm [ENTER]:"
 read notused
