@@ -43,6 +43,10 @@ NOCREATEROLE INHERIT LOGIN;"
 
 echo "Create database.yml [ENTER]:"
 read notused
+mkdir ~/$app_dir
+mkdir ~/$app_dir/shared
+mkdir ~/$app_dir/shared/config
+
 echo 'production:' > "~/$app_dir/shared/config/database.yml"
 echo '  adapter: postgresql' >> "~/$app_dir/shared/config/database.yml"
 echo "  username: $db_user_name" >> "~/$app_dir/shared/config/database.yml"
