@@ -2,7 +2,9 @@
 
 echo "Install apt-get packages (sudo needed) [ENTER]:"
 read notused
-sudo apt install gnupg2 nodejs postgresql-9.5 postgresql-server-dev-9.5
+curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
+sudo apt-get update
+sudo apt-get install -y gnupg2 nodejs postgresql-9.5 postgresql-server-dev-9.5
 
 echo "Type the db_user name, followed by [ENTER]:"
 read db_user_name
