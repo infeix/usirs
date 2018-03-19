@@ -16,9 +16,15 @@ echo "Type the secret key, followed by [ENTER]:"
 
 read secret_key
 
-gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+gpg --keyserver hkp://keys.gnupg.net --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E37D2BAF1CF37B13E2069D6956105BD0E739499BDB
 \curl -sSL https://get.rvm.io | bash -s stable
+
+ecode=$?
+if [ ecode != 0 ]; then
+  printf "Error when executing command: '$1'"
+  exit ecode
+fi
+
 rvm install 2.3.1
 rvm user 2.3.1
 gem install bundler
