@@ -12,7 +12,7 @@ echo "Type the db_user password, followed by [ENTER]:"
 
 read db_user_pass
 
-echo "Type the secret key, followed by [ENTER]:"
+echo "Type the secret (bundle exec rake secret) key, followed by [ENTER]:"
 
 read secret_key
 
