@@ -17,7 +17,7 @@ read db_user_pass
 echo "Create Postgres User [ENTER]:"
 read notused
 sudo -u postgres psql -c "CREATE ROLE $db_user_name PASSWORD '$db_user_pass' NOSUPERUSER CREATEDB NOCREATEROLE INHERIT LOGIN;"
-
+sudo -u postgres psql -c "CREATE DATABASE $db_user_name OWNER $db_user_name"
 echo "Add GPG key for downloading rvm [ENTER]:"
 read notused
 gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
