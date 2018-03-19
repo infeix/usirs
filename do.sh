@@ -2,9 +2,11 @@
 
 echo "Install apt-get packages (sudo needed) [ENTER]:"
 read notused
+curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
+echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
 curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get update
-sudo apt-get install -y gnupg2 nodejs postgresql-9.5 postgresql-server-dev-9.5
+sudo apt-get install -y gnupg2 nodejs yarn postgresql-9.5 postgresql-server-dev-9.5
 
 echo "Type the db_user name, followed by [ENTER]:"
 read db_user_name
