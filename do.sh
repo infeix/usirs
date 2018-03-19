@@ -2,7 +2,7 @@
 
 echo "Install apt-get packages (sudo needed) [ENTER]:"
 read notused
-sudo apt install gnupg2 postgresql-9.5
+sudo apt install gnupg2 nodejs postgresql-9.5 postgresql-server-dev-9.5
 
 echo "Type the db_user name, followed by [ENTER]:"
 read db_user_name
