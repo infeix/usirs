@@ -22,9 +22,6 @@ gpg2 --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 echo "Type the app directory, followed by [ENTER]:"
 read app_dir
 
-echo "Type the secret (bundle exec rake secret) key, followed by [ENTER]:"
-read secret_key
-
 echo "Download and install rvm [ENTER]:"
 read notused
 \curl -sSL https://get.rvm.io | bash -s stable
