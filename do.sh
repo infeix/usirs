@@ -33,7 +33,7 @@ gem install bundler
 
 echo "Install Postgres (sudo needed) [ENTER]:"
 read notused
-sudo apt-get install postgesql-9.5
+sudo apt-get install postgresql-9.5
 
 echo "Create Postgres User [ENTER]:"
 read notused
