@@ -23,7 +23,7 @@ echo "Type the app directory, followed by [ENTER]:"
 read app_dir
 
 echo "Type the secret (bundle exec rake secret) key, followed by [ENTER]:"
-eead secret_key
+read secret_key
 
 echo "Download and install rvm [ENTER]:"
 read notused
