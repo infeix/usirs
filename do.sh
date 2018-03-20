@@ -17,12 +17,12 @@ user_action='ENTER'
 # ---
 
 function user_interact {
-  if [ $user_action == 'ENTER' ]; then
+  if [ "$user_action" == 'ENTER' ]; then
     read notused
   else
     sleep 1
   fi
-  if [ $notused == '!' ]; then
+  if [ "$notused" == '!' ]; then
     user_action='CTRL + C'
   fi
 }
