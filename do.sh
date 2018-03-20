@@ -17,12 +17,12 @@ user_action='ENTER'
 # ---
 
 function user_interact {
-  if [ $user_action = 'ENTER' ]; then
+  if [ $user_action == 'ENTER' ]; then
     read notused
   else
     sleep 1
   fi
-  if [ $notused = '!' ]; then
+  if [ $notused == '!' ]; then
     user_action='CTRL + C'
   fi
 }
@@ -36,13 +36,6 @@ sudo bash -c "echo '$deploy_user ALL=NOPASSWD: ALL' >> /etc/sudoers"
 echo "Install apt-get packages (sudo needed) [${user_action}]:"
 user_interact
 
-echo "add the Passenger APT repository"
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 561F9B9CAC40B2F7
-sudo apt-get install -y apt-transport-https ca-certificates
-sudo bash -c 'echo deb https://oss-binaries.phusionpassenger.com/apt/passenger xenial main > /etc/apt/sources.list.d/passenger.list'
-
-# ---
-
 echo "add yarn APT repository"
 curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | sudo apt-key add -
 echo "deb https://dl.yarnpkg.com/debian/ stable main" | sudo tee /etc/apt/sources.list.d/yarn.list
@@ -52,7 +45,7 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 
 echo "installation apt packages"
 sudo apt-get update
-sudo apt-get install -y nginx-extras passenger gnupg2 nodejs yarn postgresql-9.5 postgresql-server-dev-9.5
+sudo apt-get install -y nginx-extras gnupg2 nodejs yarn postgresql-9.5 postgresql-server-dev-9.5
 
 # ---
 

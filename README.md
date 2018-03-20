@@ -18,6 +18,6 @@ It:
 ## use
 
 ```
-wget https://raw.githubusercontent.com/infeix/usirs/master/do.sh && bash -l do.sh
+git clone https://github.com/infeix/usirs.git && bash -l ./usirs/do.sh
 ```
 
