@@ -4,7 +4,7 @@ echo "Enter [DEPLOY_USER]:"
 read deploy_user
 
 echo "Grand deploy passwordless sudo previleges (sudo needed) [ENTER]:"
-notused
+read notused
 
 sudo echo "$deploy_user ALL=NOPASSWD: ALL" >> /etc/sudoers
 
