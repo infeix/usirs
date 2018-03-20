@@ -25,6 +25,12 @@ curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
 sudo apt-get update
 sudo apt-get install -y nginx-extras passenger gnupg2 nodejs yarn postgresql-9.5 postgresql-server-dev-9.5
 
+
+echo "Removing default nginx config [ENTER]:"
+read notused
+
+sudo rm /etc/nginx/sites-enabled/default
+
 echo "Enter [DB_USER_NAME]:"
 read db_user_name
 
