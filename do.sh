@@ -17,6 +17,7 @@ user_action='ENTER'
 # ---
 
 function user_interact {
+  notused=''
   if [ "$user_action" == 'ENTER' ]; then
     read notused
   else
