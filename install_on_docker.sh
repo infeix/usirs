@@ -66,14 +66,13 @@ reaction=`user_interact`
 if [ "$reaction" != 'skip' ]; then
 
   echo 'Add GPG key for downloading rvm'
-  gpg2 --recv-keys 409B6B1796C275462A1703113804BB82D39DC0E3
-  gpg2 --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
+  command curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
 
   echo 'installing rvm'
   echo 'export rvm_prefix="$HOME"' > /root/.rvmrc
   echo 'export rvm_path="$HOME/.rvm"' >> /root/.rvmrc
   \curl -L get.rvm.io |rvm_path=/opt/rvm bash -s stable
-  source /etc/profile.d/rvm.sh
+  source /opt/profile.d/rvm.sh
 
 else
   echo "skipped"
