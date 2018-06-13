@@ -26,6 +26,10 @@ result: ready for deploy
 ## use
 
 ```
-git clone -b stable https://github.com/infeix/usirs.git && bash -l ./usirs/do.sh
+git clone -b stable https://github.com/infeix/usirs.git && bash -l ./usirs/install_config.sh
+```
+or
+```
+git clone -b stable https://github.com/infeix/usirs.git && bash -l ./usirs/install_config.sh
 ```
 
