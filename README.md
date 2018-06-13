@@ -30,6 +30,6 @@ git clone -b stable https://github.com/infeix/usirs.git && bash -l ./usirs/insta
 ```
 or
 ```
-git clone -b stable https://github.com/infeix/usirs.git && bash -l ./usirs/install_config.sh
+git clone -b stable https://github.com/infeix/usirs.git && bash -l ./usirs/install_only.sh
 ```
 

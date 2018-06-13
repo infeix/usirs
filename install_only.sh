@@ -42,7 +42,7 @@ if [ "$reaction" != 'skip' ]; then
 
   echo "installation apt packages"
   apt-get update
-  apt-get install -y nginx-extras gnupg2 nodejs yarn postgresql-9.5 postgresql-server-dev-9.5
+  apt-get install -y nginx-extras gnupg2 nodejs yarn postgresql-9.6 postgresql-server-dev-9.6
 
 else
   echo "skipped"
