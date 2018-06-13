@@ -2,6 +2,8 @@
 
 # user input
 # ---
+if [ "$1" != '-f' ]; then
+
 echo "Enter [APP_NAME]:"
 read app_name
 db_user_name="${app_name}_user"
@@ -13,6 +15,12 @@ read secret_key
 app_dir=$app_name
 
 user_action='ENTER'
+
+else
+
+user_action='CTRL + C'
+
+fi
 
 # ---
 
@@ -72,6 +80,8 @@ else
 fi
 # ---
 
+if [ "$1" != '-f' ]; then
+
 echo "Start creating Postgres User [${user_action}]:"
 reaction=`user_interact`
 if [ "$reaction" != 'skip' ]; then
@@ -81,6 +91,8 @@ if [ "$reaction" != 'skip' ]; then
 
 else
   echo "skipped"
+fi
+
 fi
 # ---
 
@@ -101,13 +113,13 @@ else
 fi
 # ---
 
-echo "Start install ruby (2.3.1) with rvm [${user_action}]:"
+echo "Start install ruby (2.5.1) with rvm [${user_action}]:"
 reaction=`user_interact`
 if [ "$reaction" != 'skip' ]; then
 
-  rvm install 2.3.1
-  rvm --default use 2.3.1
-  rvm use 2.3.1
+  rvm install 2.5.1
+  rvm --default use 2.5.1
+  rvm use 2.5.1
 
 else
   echo "skipped"
@@ -124,6 +136,9 @@ else
   echo "skipped"
 fi
 # ---
+
+
+if [ "$1" != '-f' ]; then
 
 echo "Start creating database.yml [${user_action}]:"
 reaction=`user_interact`
@@ -161,3 +176,4 @@ else
 fi
 echo " === ready for deploy ==="
 
+fi
