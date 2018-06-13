@@ -70,8 +70,10 @@ if [ "$reaction" != 'skip' ]; then
   gpg2 --recv-keys 7D2BAF1CF37B13E2069D6956105BD0E739499BDB
 
   echo 'installing rvm'
-  \curl -sSL https://get.rvm.io | bash -s stable
-  source ~/.rvm/scripts/rvm
+  echo 'export rvm_prefix="$HOME"' > /root/.rvmrc
+  echo 'export rvm_path="$HOME/.rvm"' >> /root/.rvmrc
+  \curl -L get.rvm.io |rvm_path=/opt/rvm bash -s stable
+  source /etc/profile.d/rvm.sh
 
 else
   echo "skipped"
