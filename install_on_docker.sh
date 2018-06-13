@@ -72,8 +72,7 @@ if [ "$reaction" != 'skip' ]; then
   echo 'export rvm_prefix="$HOME"' > /root/.rvmrc
   echo 'export rvm_path="$HOME/.rvm"' >> /root/.rvmrc
   \curl -L get.rvm.io |rvm_path=/opt/rvm bash -s stable
-  source /opt/profile.d/rvm.sh
-
+  source ~/.rvm/scripts/rvm
 else
   echo "skipped"
 fi
